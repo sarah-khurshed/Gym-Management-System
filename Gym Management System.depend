@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1698832367 source:c:\users\elite\desktop\project\gym management system\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<conio.h>
+	"splash.h"
+	"login.h"
+	"menu.h"
+
+1698832283 c:\users\elite\desktop\project\gym management system\splash.h
+
+1698832424 c:\users\elite\desktop\project\gym management system\login.h
+
+1698831647 c:\users\elite\desktop\project\gym management system\menu.h
+
