@@ -52,11 +52,13 @@ void add_member(){
     fflush(stdin);
     printf("Member's Name: ");
     gets(me.name);fflush(stdin);
+
     printf("Member's ID: ");
     scanf("%d", &me.id);fflush(stdin);
+
     printf("Member's Payment: ");
     scanf("%lf", &me.payment);fflush(stdin);
-    show_slots();
+
     printf("Member's Slot: ");
     scanf("%d", &me.slot);fflush(stdin);
     fwrite(&me,sizeof(me),1,fa); // fwrite(source, sizeof(struct),1,destination file)
@@ -69,11 +71,11 @@ void add_member(){
 void list_of_members()//To show the list of members along with the information
 {
     system("cls");
-    printf("Member List: \n");
+    printf("\t\t\t\tList of Members \n\n");
     FILE *fr = fopen("ym.txt", "r+");
     member me;
     while(fread(&me,sizeof(me),1,fr) != NULL){
-        printf("Name :%s\n ID : %d\nPaid amount:%.2f\nBooked Slot: %d\n", me.name,me.id,me.payment, me.slot);
+        printf(" Name :%s\n ID : %d\n Paid amount:%.2f\n Booked Slot: %d\n\n", me.name,me.id,me.payment, me.slot);
     }
     fclose(fr);
     getch();
@@ -147,6 +149,7 @@ void search_member(){
   void remove_member()//To remove a previously added member
   {
     system("cls");
+
     char search[30];
     printf("Search by Name: ");
     gets(search);
@@ -175,6 +178,8 @@ void search_member(){
 
 
    void show_slots(){
+
+
     //show the time slots
 }
 
@@ -183,7 +188,9 @@ void search_member(){
     system("cls");
 
     int arr[20];
-    for(int i=0;i<20;i++){
+
+    for(int i=0;i<6;i++)
+    {
         arr[i] = 0;
     }
 
@@ -194,10 +201,13 @@ void search_member(){
         arr[me.slot-1]++;
     }
 
-    printf("Slots: ");
-    for(int i=0;i<15;i++){
-        printf("%d ", arr[i]);
-    }
+    printf("Slots: \n\n\n");
+
+
+    for(int i=0;i<6;i++)
+     {
+        printf("  %d\t", arr[i]);
+     }
 
     fclose(fs);
     getch();

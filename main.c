@@ -30,7 +30,7 @@ int main(void)
     printf("--------------------\n");
 
      printf("1. Member Management.\n");
-     printf("2. Number of members booked a slot.\n");
+     printf("2. Number of members/Booked slot.\n");
 
      scanf("%d", &n);
 
