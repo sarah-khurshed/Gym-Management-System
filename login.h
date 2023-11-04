@@ -17,12 +17,12 @@ int Login()
 
     fflush(stdin);
 
-    printf("\t\t\tWelcome to Manager Login Page\n");
-    printf("\t\t\t______________________________\n\n");
+    printf("\n\t\t\t\Welcome to FIT HUB Manager Login Page\n");
+    printf("\n\t\t\t______________________________________\n\n");
 
-    printf("Manager name: \n");
+    printf("\t\tManager name: ");
     gets(l.name);
-    printf("Please enter password: \n");
+    printf("\n\t\tPlease enter password: ");
     gets(l.password);
 
 
@@ -30,12 +30,11 @@ int Login()
     {
         if(strcmp(l.password,"1234")==0)
         {
-            printf("Verified\n");
+            printf("\n\n\t\tTaking to the menu.Please wait for a sec...\n");
             sleep(1);
+            system("cls");
 
-        system("cls");
-
-        return 1;
+         file_handling();//menu page
 
         }
         else
@@ -45,11 +44,13 @@ int Login()
 
              Login();//return to login page
     }
+
     else
       {
         printf("Unverified, hence redirecting to login page \n");
 
         return 0;
+
       }
     }
 

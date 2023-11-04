@@ -35,7 +35,11 @@ printf("\t\t\tWWWWWWWWWWWWWWWWKc.,.........;OWWWWWWWWWWWWWWWWWWW\n");
 printf("\t\t\tWWWWWWWWWWWWWWWWNo'''....''';kNWWWWWWWWWWWWWWWWWWW\n");
 printf("\t\t\tWWWWWWWWWWWWWWWWW0:.,:ldxkkk0NWWWWWWWWWWWWWWWWWWWW\n");
 
-sleep(4);
+sleep(3);
+
+printf("\n\n\t\t\t\tENTER ANY KEY TO CONTINUE");
+
+sleep(3);
 
 system("cls");
 getch();
