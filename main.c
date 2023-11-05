@@ -25,16 +25,17 @@ int main(void)
 
        int n;
 
-     printf("Choose an option \n");
+     printf("\tChoose an option \n");
 
-    printf("--------------------\n");
+    printf("\t--------------------\n\n\n");
 
-     printf("1. Member Management.\n");
-     printf("2. Number of members/Booked slot.\n");
+     printf("\t1. Member Management.\n\n");
+     printf("\t2. Number of members/Booked slot.\n");
 
+     printf("\n\n\t Enter chosen option : ");
      scanf("%d", &n);
 
-    switch(n)
+   switch(n)
     {
         case 1:
              file_handling();
@@ -44,11 +45,6 @@ int main(void)
             slot();
        break;
     }
-
    }
     return 0;
  }
-
-
-
-

@@ -1,6 +1,5 @@
 #ifndef LOGIN_H_INCLUDED
 #define LOGIN_H_INCLUDED
-
 typedef struct Manager {
 
 char name[20];
@@ -9,8 +8,8 @@ char password[30];
 
 }manage;
 
-int Login();
-int Login()
+ int Login();
+ int Login()
 {
     system("color 71");
     manage l;
@@ -32,9 +31,10 @@ int Login()
         {
             printf("\n\n\t\tTaking to the menu.Please wait for a sec...\n");
             sleep(1);
-            system("cls");
 
-         file_handling();//menu page
+        system("cls");
+
+        return 1;
 
         }
         else
@@ -53,7 +53,6 @@ int Login()
 
       }
     }
-
 
 
 #endif // LOGIN_H_INCLUDED
