@@ -1,54 +1,70 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
 
-typedef struct Member{
+typedef struct Member
+ {
     char name[30];
     int id;
     double payment;
     int slot;
-}member;
+ }member;
 
 
 void file_handling();
-void file_handling(){
+void file_handling()
+{
     int flag=0;
-    while(flag==0){
+    while(flag==0)
+      {
         int n;
         system("cls");
 
         printf("\t\t\tMember and Schedule Managing Page\n");
         printf("\t\t\t___________________________________\n");
 
-        printf("1.Add Member.\n2.List of Members.\n3.Search Member.\n");
-        printf("4.Remove Member.\n5.Edit Member.\n6.View Schedule\n7.Exit.\n");
+        printf("\t1.Add Member.\n\t2.List of Members.\n\t3.Search Member.\n");
+        printf("\t4.Remove Member.\n\t5.Edit Member.\n\t6.View Schedule\n\t7.Exit.\n");
+
+        printf("\n\n\tEnter your desired option : ");
         scanf("%d", &n);
         fflush(stdin);
-        switch(n){
-            case 1: add_member();
-                break;
-            case 2: list_of_members();
-                break;
-            case 3: search_member();
-                break;
-            case 4: remove_member();
-                break;
-            case 5: edit_member();
-                break;
-            case 6: show_slots();
 
-            case 7: flag=1;
+        switch(n)
+        {
+            case 1:
+                 add_member();
+                break;
+            case 2:
+                list_of_members();
+                break;
+            case 3:
+                  search_member();
+                break;
+            case 4:
+                  remove_member();
+                break;
+            case 5:
+                 edit_member();
+                break;
+            case 6:
+                 show_slots();
+
+            case 7:
+                  flag=1;
                 break;
             default:
                 printf("Invalid Input.\n");
                 getch();
                 file_handling();
+
                 break;
-        }
+          }
     }
 
 }
-void add_member()
-{
+
+  void add_member()
+ {
     system("cls");
     FILE *fa = fopen("ym.txt", "a+"); // fopen(filename, mode)
     member me;
@@ -80,7 +96,7 @@ void list_of_members()//To show the list of members along with the information
     FILE *fr = fopen("ym.txt", "r+");
     member me;
     while(fread(&me,sizeof(me),1,fr) != NULL){
-        printf(" Name :%s\nID : %d\n Paid amount: %.2f\n Booked Slot: %d\n\n", me.name,me.id,me.payment, me.slot);
+        printf(" Name :%s\n ID : %d\n Paid amount:%.2f\n Booked Slot: %d\n\n", me.name,me.id,me.payment, me.slot);
     }
 
     fclose(fr);
@@ -103,14 +119,12 @@ void search_member()
     int flag = 0;
 
     while(fread(&me,sizeof(me),1,fs) != NULL)
-       {
+    {
         if(strcmp(me.name,search)==0)
           {
-            printf("Name: %s\nID :%d\nPaid Amount : %.2f\n", me.name,me.id,me.payment);
+            printf(" Name :%s\n ID : %d\n Paid amount:%.2f\n Booked Slot: %d\n\n", me.name,me.id,me.payment, me.slot);
             getch();
-
             flag = 1;
-
             break;
           }
     }
@@ -133,22 +147,30 @@ void search_member()
     member me;
 
     char search[30];
-    printf("Search by name: ");
+    printf("\tSearch by name: ");
     gets(search);
     fflush(stdin);
+
     rewind(fs); //Resets the file cursor position
 
-    while(fread(&me,sizeof(me),1,fs) != NULL){
-        if(strcmp(search,me.name) == 0){
+    while(fread(&me,sizeof(me),1,fs) != NULL)
+      {
+        if(strcmp(search,me.name) == 0)
+          {
             fflush(stdin);
-            printf("Member's Name: ");
+            printf("\n\tMember's Name: ");
             gets(me.name);fflush(stdin);
-            printf("Member's ID: ");
+
+
+            printf("\tMember's ID: ");
             scanf("%d", &me.id);fflush(stdin);
-            printf("Member's Payment: ");
+
+            printf("\tMember's Payment: ");
             scanf("%lf", &me.payment);fflush(stdin);
+
             fseek(fs,-sizeof(me),SEEK_CUR);
             fwrite(&me,sizeof(me),1,fs);
+
             break;
         }
     }
@@ -163,20 +185,24 @@ void search_member()
     system("cls");
 
     char search[30];
+
     printf("Search by Name: ");
     gets(search);
     fflush(stdin);
 
     member me;
+
     FILE *source = fopen("ym.txt", "r+");
     FILE *copy = fopen("ym_temp.txt", "w+");
 
     while(fread(&me,sizeof(me),1,source) != NULL)
        {
 
-        if(strcmp(search,me.name) != 0){
+        if(strcmp(search,me.name) != 0)
+
+          {
             fwrite(&me,sizeof(me),1,copy);
-        }
+          }
        }
 
     fclose(source);
@@ -185,7 +211,7 @@ void search_member()
     remove("ym.txt"); //remove(source file)
     rename("ym_temp.txt","ym.txt"); //rename(temp file, desired name of file)
 
-    printf("Successfully Removed");
+    printf("\n\n\t\tSuccessfully Removed!");
     getch();
 }
 
@@ -198,25 +224,25 @@ void search_member()
     char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
     char *times[] = {"8:00 AM", "9:30 AM", "11:00 AM", "12:30 PM", "2:00 PM"};
 
-    printf("Time Schedule:\n\n");
+    printf("\t\t\t\tTime Schedule For FIT HUB Members\n\n\n\n");
 
     // Display row with  times
-    printf("%-12s|%-14s|%-14s|%-14s|%-14s|%-14s|\n", "", "8:00 AM", "9:30 AM", "11:00 AM", "12:30 PM", "2:00 PM");
+    printf("%-12s|%-14s|%-14s|%-14s|%-14s|%-14s|\n\n", "", "8:00 AM", "9:30 AM", "11:00 AM", "12:30 PM", "2:00 PM") ;
 
     // Display slot according to day and time
     for(int i = 1; i <= 5; i++)
-    {
+     {
         for(int j = 0; j < 5; j++)
-        {
-            printf("%-12s|", days[j]);
+         {
+           printf("%-12s|", days[j]);
 
             for(int k = 0; k < 5; k++)
             {
                 printf("slot%-9d |", i++);
             }
 
-            printf("\n");
-        }
+            printf("\n\n");
+         }
     }
 
     getch();
@@ -230,7 +256,7 @@ void search_member()
 
     int arr[25];
 
-    for(int i=0;i<25;i++)
+    for(int i=0;i<25;i++)//25 slots
     {
         arr[i] = 0;
     }
@@ -240,14 +266,14 @@ void search_member()
 
     while(fread(&me,sizeof(me),1,fs) != NULL)
         {
-          arr[me.slot-1]++;
+         arr[me.slot-1]++;
         }
 
-    printf("\t\t\t\t\t\tSlots: \n\n\n");
+    printf("\t\t\t\t\t\tBooked Slot \n\n\n");
 
     for(int i=0;i<25;i++)
      {
-        printf("\t\tSlot %d = %d members\n",i, arr[i]);
+        printf("\t\tSlot %d = %d members\n",i+1, arr[i]);
      }
 
     fclose(fs);

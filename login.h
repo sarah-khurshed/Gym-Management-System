@@ -38,7 +38,7 @@ char password[30];
 
         }
         else
-            printf("Wrong name or password! ");
+            printf("\n\n\tWrong name or password! ");
             sleep(2);
             system("cls");
 
@@ -52,6 +52,7 @@ char password[30];
         return 0;
 
       }
+
     }
 
 

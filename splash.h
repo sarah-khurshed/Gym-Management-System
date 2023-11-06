@@ -1,5 +1,6 @@
 #ifndef SPLASH_H_INCLUDED
 #define SPLASH_H_INCLUDED
+
 void splash(void)
 {
 printf("\t\t\t.-..--. .-. .----.---.  .-.  .-.  .-.  .-. .-.-.-~. \n");
@@ -9,10 +10,7 @@ printf("\t\t\t| |`-'  | |    | |      | |   | | | |   | | | | ~~.-  \n");
 printf("\t\t\t| |     | |    | |      | |   | | | | _ | | | |.-)))  \n");
 printf("\t\t\t`-'     `-'    `-'      `-'   `-' `-'`-'`-' `-' ~~     \n");
 printf("\n\t\t\t= = = = = = = = = = = = = = = = = = = = = = = = = = =\n\n");
-
-
 sleep(2);
-
 printf("\t\t\tWWWWWWWWWWWWWWWWWWWWNOl,'';lkXWWWWWWWWWWWWWWWWWWWW\n");
 printf("\t\t\tWWWWWWWNKO0XN0OKWWWWOc,;,...,xNWWWWWWWNK0XWWWWWWWW\n");
 printf("\t\t\tWWWWWNKk:,:lc;'oXWWNd.'';....lXWWWKdllc,,lOXWWWWWW\n");
@@ -35,16 +33,16 @@ printf("\t\t\tWWWWWWWWWWWWWWWWKc.,.........;OWWWWWWWWWWWWWWWWWWW\n");
 printf("\t\t\tWWWWWWWWWWWWWWWWNo'''....''';kNWWWWWWWWWWWWWWWWWWW\n");
 printf("\t\t\tWWWWWWWWWWWWWWWWW0:.,:ldxkkk0NWWWWWWWWWWWWWWWWWWWW\n");
 
+
 sleep(3);
 
 printf("\n\n\t\t\t\tENTER ANY KEY TO CONTINUE");
 
-sleep(3);
+sleep(2);
 
 system("cls");
 getch();
 }
-
 
 
 #endif // SPLASH_H_INCLUDED

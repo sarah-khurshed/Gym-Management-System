@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1699174043 source:c:\users\elite\desktop\new folder (2)\demo2\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<conio.h>
+	"splash.h"
+	"login.h"
+	"menu.h"
+
+1699155969 c:\users\elite\desktop\new folder (2)\demo2\splash.h
+
+1699172879 c:\users\elite\desktop\new folder (2)\demo2\login.h
+
+1699213037 c:\users\elite\desktop\new folder (2)\demo2\menu.h
+
+1699174043 source:c:\users\elite\onedrive\desktop\gym\management\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<conio.h>
+	"splash.h"
+	"login.h"
+	"menu.h"
+
+1699155969 c:\users\elite\onedrive\desktop\gym\management\splash.h
+
+1699243951 c:\users\elite\onedrive\desktop\gym\management\login.h
+
+1699243950 c:\users\elite\onedrive\desktop\gym\management\menu.h
+
